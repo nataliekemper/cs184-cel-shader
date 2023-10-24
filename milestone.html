@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style>
+    body {
+      padding: 100px;
+      width: 1000px;
+      margin: auto;
+      text-align: left;
+      font-weight: 300;
+      font-family: 'Open Sans', sans-serif;
+      color: #121212;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+  </style>
+<title>Milestone Report |  CS 184</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+<body>
+
+<h1 align="middle">Milestone Report: Toon and Line Art Shader</h1>
+    <h2 align="middle">Akemi Nagashiki, Christine Co, Natalie Kemper, and Ryan Adolf</h2>
+
+    <h2 align="middle">Progress Summary & Preliminary Results</h2>
+    <div class="padded">
+
+      <div align="center">
+        <table style="border-collapse: collapse">
+            <tr>
+              <td class="loops"><img src="images/sphere_gui.png" width="500px" align="middle" /></td>
+              <td class="loops"><img src="images/cloth.png" width="500px" align="middle" /></td>
+            </tr>
+        </table>
+        <figcaption align="middle"> Toon Shading on our Sphere & Cloth from Project 4!.</figcaption>
+    </div>
+
+        <p>
+          So far, we have implemented basic toon shading that accounts for a rim light, specularity, and shadow that adjust
+          depending on the camera view of the object. We modified our Project 4 Blinn-Phong shader code to include ambient,
+          diffuse, specular, and rim light, which modify the original Blinn-Phong gradient shadow to a now discrete shadow. This emulates the look of cartoon-like
+          styles since we can see sharp contrasts in color based on how light is hitting the object.
+        </p>
+
+      <p>
+      Additionally, we implemented a browser website where we imported
+      custom models (such as the fabulous llama shown below) to test our custom shaders. Because edge-detection and outlining is taking longer than expected, we updated
+      our plan a bit to explore more textures and shaders. For example, we are currently interesting in exploring the iridescent texture from our proposal, and began with
+      implementing a basic thermal shader. We wish to build off of the thermal shader to eventually produce an iridescent shader. Additionally, modified our GUI to
+      allow the user to modify the colors of the diffuse, ambient, specular and rim color, and choose the type of model (sphere, cube, llama) they wish to use in the browser.
+    </p>
+
+    <div align="center">
+      <table style="border-collapse: collapse">
+          <tr>
+            <td class="loops"><img src="images/llama_toon.png" width="500px" align="middle" /></td>
+            <td class="loops"><img src="images/llama_ir.png" width="500px" align="middle" /></td>
+          </tr>
+      </table>
+      <figcaption align="middle"> Toon Shading (left) and Thermal Shading (right) on our Llama!.</figcaption>
+  </div>
+
+  <h2 align="middle"> Milestone Video </h2>
+
+  <center>
+    <video width="1000" controls>
+    <source src="milestone/milestonevideo.mp4" width="500px" align="middle" type="video/mp4">
+
+  Your browser does not support HTML video.
+  </video>
+</center>
+
+
+<h2 align="middle">Link to Slides</h2>
+<center>
+  <br><a href="https://docs.google.com/presentation/d/1EXjriShY4HYWFMEtqL5K2-yjOLTd8eGJuVhAxezYf9w/edit?usp=sharing">Link to slides!</a></br>
+</center>
+
+	<h2 align="middle">Schedule</h2>
+    <div class="padded">
+    	<p> Initially, we intended to modify our cel shader to include edge-detection that would outline our models. However, we ran into some trouble implementing this aspect of the
+      project. While reaserching, we found that line thickness and line weight can be implemented using stencil buffers or depth detection using multi-pass rendering. However, we did not realize how difficult it would be to
+      implement this feature, and thus, we needed to modify our timeline to properly account for this part of the project.</p>
+
+      <p> Otherwise, we are generally on schedule, and have successfully created the 2D toon-shader as proposed.
+        Going forward, we are going to explore and incorporate additional 2D style textues (i.e. iridescent, watercolor, hatching, thermal etc.), which was initially only going to be
+      implemented if we had time. </p>
+
+		<p><b>Rest of Week 3 (4/25):</b>
+			<br> <u>Part 4:</u> </br> -Continue with different methods of implementing outlines/line art styles </br>
+			<br> -Further polish the thermal shader </br>
+      <br> -Modify thermal shader to implement iridescent texture </br>
+		</p>
+		<p><b>Week 4 (5/1): </b>
+			<br><u>Part 5:</u> </br> -Continue to work on outlining/line weights </br>
+      <br> -Finalize the outline/line art shader </br>
+      <br> -Try a basic hatching/watercolor shader implemented with paper texturing </br>
+		</p>
+		<p> <b>Week 5 (5/8): </b>
+			<br>-Finalize the renders and videos demonstrating the project</br>
+			<br>-Complete the final project video and report webpage</br>
+			<br>-Tues 5/10 Final Deliverables due</br>
+		</p>
+
+
+	<h2 align="middle">Extra Fun Things!</h2>
+  <center>
+    <table>
+    <tr>
+        <td>
+            <video width="500" controls>
+                <source src="images/crazyllama.mp4" type="video/mp4">
+            </video>
+       </td>
+       <td>
+           <video width="500" controls>
+              <source src="images/cd.mp4" type="video/mp4">
+           </video>
+       </td>
+    </tr>
+</table>
+
+<p> We used the tutorial linked below as inspiration for the llama's "watercolor" mixing texture! </p>
+<a href="https://www.youtube.com/playlist?list=PL4neAtv21WOmIrTrkNO3xCyrxg4LKkrF7">Important concepts behind toon shading</a>
+
+</center>
+
+
+    </div>
+</body>
+</html>

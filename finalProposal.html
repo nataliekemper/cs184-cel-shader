@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style>  
+    body {
+      padding: 100px;
+      width: 1000px;
+      margin: auto;
+      text-align: left;
+      font-weight: 300;
+      font-family: 'Open Sans', sans-serif;
+      color: #121212;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+  </style> 
+<title>Final Proposal |  CS 184</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+<body>
+
+<h1 align="middle">Final Proposal: Toon and Line Art Shader</h1>
+    <h2 align="middle">Akemi Nagashiki, Christine Co, Natalie Kemper, and Ryan Adolf</h2>
+    <div align="middle">
+            <table style="width=100%">
+                <tr>
+                    <td>
+                        <img src="images/inspiration_images.png" align="middle" width="800px" />
+                        <figcaption align="middle">Inspiration</figcaption>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    <h2 align="middle">Project Summary</h2>
+    <div class="padded">
+        <p>
+             For our project, we are going to implement a Cel-Shader, also known as a toon shader. Toon shading is a type of stylistic rendering that will allow us to render images that have the feel of 2-dimensional shading and color applied to 3-dimensional models. We will then build upon the toon shader to explore different styles, such as shading that looks like hand-drawn line art. 
+        </p>
+
+    <h2 align="middle">Problem Description</h2>
+    <div class="padded">
+    	<p>After completing Project 4 and gaining a basic understanding of basic shaders, like Blinn and Phong, we wanted to go deeper and explore different kinds of shaders that deviated from the traditional realistic shader we’ve seen thus far. We wish to create a cel-shader (commonly known as toon shader) that will emulate the look and feel of hand drawn/comic-book style art. It is difficult to implement this kind of shader because hand-drawn art is difficult to replicate computationally, since human drawings are less precise and follow a more organic approach compared to computer-generated art. It is also difficult to emulate because there is really no objective “equation” or mode of measurement for creating traditional art. In order to address these points and create a shader that will produce a more 2-dimensional feel, we will try to use edge-detection. With an edge detection algorithm, such as Sobel edge detection, object edges are given a black outline to emulate a hand-drawn style. Additionally, we will implement full diffuse reflection and discrete colorization, which will render scenes in using flat colors that do not follow gradient color patterns to emulate a hand-colored look. This color block style will more closely resemble comic book/manga/anime shading styles. </p>
+
+    <h2 align="middle">Goals and Deliverables</h2>
+    <div class="padded">
+    	<p>Throughout this project, our goal is to create a cell shader that will be able to render any 3D model as if it was a 2D hand drawn object. We additionally want to build off of this shader by also applying a line art texture that mimics the look of comic book art.  By the end of the project, we will produce renders of three different models with our shader applied to it. Since we are looking to achieve a more hand drawn, organic texture, we will provide parameters that the user can adjust to customize the sharpness, thickness, or texture of the line art.</p>
+		<p>To measure the quality of our project, we can compare models rendered with physically-based materials with renders of our toon shaded models. A long-term goal would be to create an animation from multiple of these images and compare the resulting animation to hand-drawn flip book animations. However, we are not aiming for pixel-perfect accuracy; the goal of the project is to produce renders that give the feel of hand-drawn objects, even if there are artistic artifacts in the render. We might also explore iridescent coloring in the images if we have extra time.</p>
+		<p>Some elements we foresee that we will run into challenges with are the edge detection and how to identify areas of variation in the line weights and texture of the brushes according to the lighting. To tackle this part of the implementation, we have started to look through content on edge detection.
+</p>
+
+	<h2 align="middle">Schedule</h2>
+    <div class="padded">
+    	<p> <b>Week 1 (4/11): </b>
+    		<br> Mon 4/11 Proposal due </br>
+			<br> Wed 4/13 Proposal Revisions sent, start the project </br>
+			<br> <u> Part 1: </u> </br>
+			<br> - Task 1: Develop an initial version of the cel shader</br>
+			<br> - Task 2: Set the light direction </br>
+		</p>
+		<p> <b>Week 2 (4/18):</b>
+			<br> <u>Part 2:</u> Create outlines </br>
+			<br> <u>Part 3:</u> Modify the cel shader to imitate hand-drawn styles </br>
+			<br> - Task 1: Build upon the outlines and change the parameters (weight/texture of the strokes)</br>
+			<br> - Task 2: Integrate the lines to vary based on different lighting qualities</br>
+		</p>
+		<p><b>Week 3 (4/25):</b>
+			<br> <u>Part 4:</u> Implement support for users to customize the sharpness, thickness, or texture of the line art  </br>
+			<br>Complete the milestone status report webpage</br>
+			<br>Tues 4/26 Graded Milestone due</br>
+		</p>
+		<p><b>Week 4 (5/1): </b>
+			<br><u>Part 5:</u> If time permits, explore different 2D style textures (i.e. iridescent, watercolor, etc)</br>
+			<br>Thurs 5/5 Final Presentations </br>
+		</p>
+		<p> <b>Week 5 (5/8): </b>
+			<br>Finalize the renders and videos demonstrating the project</br>
+			<br>Complete the final project video and report webpage</br>
+			<br>Tues 5/10 Final Deliverables due</br>
+		</p>
+
+
+	<h2 align="middle">Resources</h2>
+    <div class="padded">
+        <p><b>Photo inspiration links:</b></br>
+		<br><a href="https://www.shadertoy.com/view/llcXWM">Iridescent crystals</a></br>
+		<br><a href="https://www.shadertoy.com/view/llcXWM">Astronaut 2D iridescent shader</a></br>
+		<br><a href="https://vimeo.com/360936125">Toilet</a></br>
+		<br><a href="https://www.behance.net/gallery/134320645/Snack-Fk-no-Series">Short film with hand-drawn textures</a></br>
+
+		<p><b>Resources we will use as cel-shading references:</b></br>
+		<br><a href="https://en.wikibooks.org/wiki/GLSL_Programming/Unity/Toon_Shading">Important concepts behind toon shading</a></br>
+		<br><a href="https://www.lighthouse3d.com/tutorials/glsl-12-tutorial/toon-shading/">Cel shading implementation tutorial</a></br>
+		<br><a href="https://aaronhertzmann.com/2021/05/19/how-to-draw-line-thickness.html">Computing line thickness</a></br>
+		<br><a href="https://people.cs.umass.edu/~dliu/projects/NeuralStrokes/"> Outline Implementation I</a></br>
+		<br><a href="https://cs184.eecs.berkeley.edu/sp19/lecture/22-37/image-processing"> Outline Implementation II (From a previous semester of CS184)</a></br>
+		<br><a href="https://www.gamedeveloper.com/art/procedural-texturing-for-hand-painted-stylized-character-pipelines"> Information on pipelines for procedural texturing for hand-painted styles</a></br>
+
+</p>
+
+
+
+    </div>
+</body>
+</html>
